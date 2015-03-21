@@ -1,16 +1,17 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="scrambled-word">{{ word }}</div>
+    <div class="scrambled-word" ng-model="word.scrambled">{{ word.scrambled }}</div>
   </div>
 
   <div class="row row-center">
-    <form>
-      <input class="user-form" type="text">
+    <form ng-submit="CheckAnswerFactory.correctResponse(word.user_response)">
+      <input class="user-form" type="text" ng-model="word.user_response"> {{ word.user_response }}
     </form>
   </div>
 
   <div class="row row-center">
-    <button type="button" class="button-custom">need a hint</button>
+    <button type="button" class="button-custom" ng-click="word.show_hint = true">need a hint</button>
+    <div ng-show="word.show_hint">Hint: {{ word.hint }}</div>
   </div>
 
 </div>
