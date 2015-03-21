@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('wordScrambleGameApp')
-  .controller('MainCtrl', ['$scope', function($scope){
-    
+  .controller('MainCtrl', ['$scope', 'RandomWordFactory', function($scope, RandomWordFactory){
+
+    console.log(RandomWordFactory);
+
   }]);
