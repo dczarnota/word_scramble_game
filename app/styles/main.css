@@ -51,6 +51,26 @@ body {
     outline: 0;
 }
 
+.hint {
+  margin-top: 30px;
+  font-size: 25px;
+  animation-duration: 2s;
+  animation-name: slide-down;
+  color: #CCAB17;
+}
+
+@keyframes slide-down {
+  from {
+    margin-top: 0px;
+    color: #DAE1E5;
+  }
+
+  to {
+    margin-top: 30px;
+    color: #CCAB17;
+  }
+}
+
 .footer {
   padding-left: 15px;
   padding-right: 15px;
