@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('wordScrambleGameApp')
-  .controller('MainCtrl', ['$scope', 'RandomWordFactory', function($scope, RandomWordFactory){
+  .controller('MainCtrl', ['$scope', 'RandomWordFactory', 'ScrambleWordFactory', function($scope, RandomWordFactory, ScrambleWordFactory){
 
-    console.log(RandomWordFactory);
+    RandomWordFactory.getRandomWord().then(function(data){
+      $scope.word = ScrambleWordFactory.scrambleWord(data.data.word);
+    });
 
   }]);
