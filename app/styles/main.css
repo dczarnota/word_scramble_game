@@ -1,12 +1,15 @@
 body {
   padding: 0;
   background-color: #31CCC2;
+  font-family: 'Comfortaa', cursive;
 }
 
 .scrambled-word {
   text-align: center;
   font-size: 50px;
-  margin-top: 50%;
+  margin-top: 45%;
+  font-weight: 700;
+  color: #DAE1E5;
 }
 
 .row-center {
@@ -16,7 +19,7 @@ body {
 .user-form {
   background-color: rgba(49, 204, 194, 0.6);
   text-align: center;
-  font-size: 32px;
+  font-size: 50px;
   color: #CCAB17;
   border-bottom: 1px solid;
   border-right: 0px;
@@ -26,6 +29,26 @@ body {
 
 .user-form:focus {
   outline: 0;
+}
+
+.button-custom {
+  font-size: 21px;
+  margin-top: 30px;
+  border-style: solid;
+  border-color: #CCAB17;
+  color: #DAE1E5;
+  background-color: transparent;
+  border-radius: 6px;
+  letter-spacing: 2px;
+}
+
+.button-custom:hover {
+  background-color: #CCAB17;
+  color: #31CCC2;
+}
+
+.button-custom:focus {
+    outline: 0;
 }
 
 .footer {
