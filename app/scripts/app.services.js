@@ -65,8 +65,8 @@ angular.module('wordScrambleGameApp')
       firstLetter: function(word){
         var str = word.toLowerCase();
         var word_array = str.split('');
-        console.log(word_array[0]);
-        return word_array[0];
+        console.log(word_array);
+        return word_array;
       }
     };
   }]);

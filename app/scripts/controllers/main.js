@@ -20,5 +20,4 @@ angular.module('wordScrambleGameApp')
     });
 
     $scope.checkUserResponse = CheckAnswerFactory.correctResponse;
-
   }]);

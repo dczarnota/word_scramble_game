@@ -1,6 +1,7 @@
 <div class="container-fluid">
   <div class="row">
-    <div class="scrambled-word" ng-model="word.scrambled">{{ word.scrambled }}</div>
+    <div ng-hide="word.correct" class="scrambled-word" ng-model="word.scrambled">{{ word.scrambled }}</div>
+    <div class="correct-word" ng-show="word.correct">correct!</div>
   </div>
 
   <div class="row row-center">
@@ -9,9 +10,13 @@
     </form>
   </div>
 
-  <div class="row row-center">
-    <button type="button" class="button-custom" ng-click="word.show_hint = true">need a hint</button>
-    <div class="hint" ng-show="word.show_hint">first letter: '{{ word.hint }}'</div>
+  <div class="row row-center" ng-hide="word.correct">
+    <button type="button" class="button-custom" ng-click="word.show_hint = true" ng-show="!word.show_hint">need a hint</button>
+    <div class="hint" ng-show="word.show_hint">first letter: '{{ word.hint[0] }}'</div>
+  </div>
+
+  <div class="row row-center" ng-show="word.correct">
+    <button type="button" class="button-custom" ng-click="word.show_hint = true">play again</button>
   </div>
 
 </div>
