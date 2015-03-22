@@ -8,6 +8,7 @@
     <form ng-submit="checkUserResponse(word)">
       <input type="text" class="user-form" ng-model="word.user_response">
     </form>
+    <div class="attempt" ng-show="word.attempt">try again</div>
   </div>
 
   <div class="row row-center" ng-hide="word.correct">

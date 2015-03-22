@@ -10,7 +10,7 @@ angular.module('wordScrambleGameApp')
           method: 'GET',
           url: 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=4&maxLength=6&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
         }).success(function(data){
-          console.log(data.word);
+          console.log("Here's the answer in case you're struggling: " + data.word);
           random_word = data.word;
           return random_word;
         });
@@ -46,15 +46,13 @@ angular.module('wordScrambleGameApp')
     return {
       correctResponse: function(word){
         var str = '';
-        console.log("word: "+word);
-        console.log('user_response: '+word.user_response);
-        console.log('unscrambled: '+word.unscrambled);
         str = word.unscrambled.toLowerCase();
         if(word.user_response === str){
-          console.log('correct');
           word.correct = true;
-          console.log(word.correct)
+          word.attempt = false;
           return word;
+        } else {
+          word.attempt = true;
         }
       }
     };
@@ -65,7 +63,6 @@ angular.module('wordScrambleGameApp')
       firstLetter: function(word){
         var str = word.toLowerCase();
         var word_array = str.split('');
-        console.log(word_array);
         return word_array;
       }
     };

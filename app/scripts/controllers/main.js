@@ -9,7 +9,8 @@ angular.module('wordScrambleGameApp')
       user_response: '',
       hint: '',
       show_hint: false,
-      correct: false
+      correct: false,
+      attempt: false
     };
 
     RandomWordFactory.getRandomWord().then(function(data){
