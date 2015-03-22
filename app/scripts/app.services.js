@@ -45,11 +45,16 @@ angular.module('wordScrambleGameApp')
   .factory('CheckAnswerFactory', [function(){
     return {
       correctResponse: function(word){
+        var str = '';
         console.log("word: "+word);
         console.log('user_response: '+word.user_response);
         console.log('unscrambled: '+word.unscrambled);
-        if(word.user_response === word.unscrambled){
+        str = word.unscrambled.toLowerCase();
+        if(word.user_response === str){
           console.log('correct');
+          word.correct = true;
+          console.log(word.correct)
+          return word;
         }
       }
     };

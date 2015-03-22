@@ -31,10 +31,6 @@ body {
   outline: 0;
 }
 
-.user-submit-form {
-  visibility: hidden;
-}
-
 .button-custom {
   font-size: 21px;
   margin-top: 30px;
