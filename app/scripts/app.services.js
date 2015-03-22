@@ -45,7 +45,7 @@ angular.module('wordScrambleGameApp')
   .factory('CheckAnswerFactory', [function(){
     return {
       correctResponse: function(word){
-        console.log(word);
+        console.log("word: "+word);
         console.log('user_response: '+word.user_response);
         console.log('unscrambled: '+word.unscrambled);
         if(word.user_response === word.unscrambled){

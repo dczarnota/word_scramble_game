@@ -18,4 +18,6 @@ angular.module('wordScrambleGameApp')
       return $scope.word;
     });
 
+    $scope.checkUserResponse = CheckAnswerFactory.correctResponse;
+
   }]);
