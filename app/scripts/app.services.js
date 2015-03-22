@@ -69,4 +69,12 @@ angular.module('wordScrambleGameApp')
         return word_array;
       }
     };
+  }])
+
+  .factory('PlayAgainFactory', ['$window', function($window){
+    return {
+      restart: function(){
+        $window.location.reload();
+      }
+    };
   }]);

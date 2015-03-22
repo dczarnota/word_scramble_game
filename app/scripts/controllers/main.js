@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('wordScrambleGameApp')
-  .controller('MainCtrl', ['$scope', 'RandomWordFactory', 'ScrambleWordFactory', 'CheckAnswerFactory', 'HintFactory', function($scope, RandomWordFactory, ScrambleWordFactory, CheckAnswerFactory, HintFactory){
+  .controller('MainCtrl', ['$scope', '$window', 'RandomWordFactory', 'ScrambleWordFactory', 'CheckAnswerFactory', 'HintFactory', 'PlayAgainFactory', function($scope, $window, RandomWordFactory, ScrambleWordFactory, CheckAnswerFactory, HintFactory, PlayAgainFactory){
 
     $scope.word = {
       unscrambled: '',
@@ -20,4 +20,5 @@ angular.module('wordScrambleGameApp')
     });
 
     $scope.checkUserResponse = CheckAnswerFactory.correctResponse;
+    $scope.playAgain = PlayAgainFactory.restart;
   }]);
