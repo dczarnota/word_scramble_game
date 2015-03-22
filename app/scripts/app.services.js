@@ -29,15 +29,25 @@ angular.module('wordScrambleGameApp')
         var index = 0;
         var scrambled_word_array = [];
 
-        while(word_array.length > 0){
-          random_index = Math.floor(Math.random() * word_array.length);
-          scrambled_word_array[index] = word_array[random_index];
-          index++;
-          word_array.splice(random_index, 1);
-        }
+        var scrambleAndCheck = function(str, word_array, random_index, index, scrambled_word_array){
+          while(word_array.length > 0){
+            random_index = Math.floor(Math.random() * word_array.length);
+            scrambled_word_array[index] = word_array[random_index];
+            index++;
+            word_array.splice(random_index, 1);
+          }
 
-        scrambled_word = scrambled_word_array.join('');
-        return scrambled_word;
+          scrambled_word = scrambled_word_array.join('');
+          console.log('scrambled_word: '+scrambled_word);
+          console.log('str: '+str);
+          if(scrambled_word === str){
+            scrambleAndCheck(str, word_array, random_index, index, scrambled_word_array);
+          }
+        
+          return scrambled_word;
+        };
+
+        return scrambleAndCheck(str, word_array, random_index, index, scrambled_word_array);
       }
     };
   }])
