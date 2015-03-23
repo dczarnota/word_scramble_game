@@ -1,10 +1,10 @@
 # Word Scramble Game
 
-Unscramble a random 4-6 letter word.
+Play the Word Scramble Game [here](http://word-scramble-game-2015.herokuapp.com/). 
 
-Words are randomly retrieved from the [Wordnik API](http://developer.wordnik.com/).
+Unscramble a random 4-6 letter word. Words are randomly retrieved from the [Wordnik API](http://developer.wordnik.com/).
 
-Front-end built with AngularJS.
+Front-end built with AngularJS and deployed on Heroku. 
 
 ## Getting Started
 
@@ -22,7 +22,11 @@ version 0.11.1.
 
     `npm install`
 
-4. To start the app, run: 
+4. Run the following to build the app: 
+    
+    `grunt build`
+
+5. Run the following to start the app:
 
     `grunt serve`
 
