@@ -22,7 +22,6 @@ angular.module('wordScrambleGameApp')
 
   .factory('ScrambleWordFactory', [function(){
     //ScrambleWordFactory takes the random word and scrambles it
-    var scrambled_word;
 
     return {
       scrambleWord: function(word){
@@ -35,6 +34,10 @@ angular.module('wordScrambleGameApp')
           //Underscore shuffle returns a shuffled copy of the array
           //Uses a version of the Fisher-Yates shuffle
         scrambled_word = _.shuffle(word_array).join('');
+
+        if(scrambled_word === str){
+          scrambled_word = _.shuffle(word_array).join('');
+        }
 
         return scrambled_word;
       }
