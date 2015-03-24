@@ -52,9 +52,12 @@ angular.module('wordScrambleGameApp')
     return {
       correctResponse: function(word){
         var str = '';
-        str = word.unscrambled.toLowerCase();
+        var user_response_lower = '';
 
-        if(word.user_response === str){
+        str = word.unscrambled.toLowerCase();
+        user_response_lower = word.user_response.toLowerCase();
+
+        if(user_response_lower === str){
           //word.correct changes from false to true. This is used in the ng-show="word.correct" (main.html) to show the "correct!" text to the user
           word.correct = true;
         
