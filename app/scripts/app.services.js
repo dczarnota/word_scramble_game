@@ -11,10 +11,12 @@ angular.module('wordScrambleGameApp')
           method: 'GET',
           url: 'http://api.wordnik.com:80/v4/words.json/randomWord?hasDictionaryDef=true&minCorpusCount=0&maxCorpusCount=-1&minDictionaryCount=1&maxDictionaryCount=-1&minLength=4&maxLength=6&api_key=a2a73e7b926c924fad7001ca3111acd55af2ffabf50eb4ae5'
         }).success(function(data){
-          console.log("Here's the answer in case you're struggling: " + data.word.toLowerCase());
           //On successful GET request from the API, the data object contains the random word
-          random_word = data.word.toLowerCase();
-          return random_word;
+          var random_word_lower;
+          random_word = data.word;
+          random_word_lower = random_word.toLowerCase();
+          console.log("Here's the answer in case you're struggling: " + random_word_lower);
+          return random_word_lower;
         });
       }
     };
