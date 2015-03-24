@@ -35,7 +35,7 @@ angular.module('wordScrambleGameApp')
           //Uses a version of the Fisher-Yates shuffle
         scrambled_word = _.shuffle(word_array).join('');
 
-        if(scrambled_word === str){
+        while(scrambled_word === str){
           scrambled_word = _.shuffle(word_array).join('');
         }
 
