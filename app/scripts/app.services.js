@@ -53,8 +53,8 @@ angular.module('wordScrambleGameApp')
       correctResponse: function(word){
         var str = '';
         var user_response_lower = '';
-
         str = word.unscrambled.toLowerCase();
+
         user_response_lower = word.user_response.toLowerCase();
 
         if(user_response_lower === str){
